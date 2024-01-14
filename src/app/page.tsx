@@ -1,113 +1,249 @@
-import Image from 'next/image'
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import logo from "@public/assets/logo-black.svg";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import guy from "@public/assets/guy-pic.svg";
+import typingPc from "@public/assets/typing-pc.svg";
+import payment from "@public/assets/payment.svg";
+import framedCursor from "@public/assets/framed-cursor.svg";
+import upload from "@public/assets/upload.svg";
+import smsIcon from "@public/assets/carbon_platforms.svg";
+import creditCard from "@public/assets/credit-card.svg";
+import sendIcon from "@public/assets/send.svg";
+import carriage from "@public/assets/carriage.svg";
+import gender from "@public/assets/gender.svg";
+import skill from "@public/assets/skill-level-basic.svg";
+import department from "@public/assets/department.svg";
+import Audience from "@public/assets/Audience.svg";
+import Upload from "@public/assets/Upload-frame.svg";
+import Deliver from "@public/assets/Deliver-ad.svg";
+import phone from "@public/assets/call.svg";
+import mail from "@public/assets/mail.svg";
+import facebook from "@public/assets/facebook.svg";
+import x from "@public/assets/x-fill.svg";
+import ig from "@public/assets/instagram.svg";
+import linkedin from "@public/assets/linkedin.svg";
+import Pay from "@public/assets/Pay.svg";
+import Blow from "@public/assets/Blow-away.svg";
+import copy from "@public/assets/c.svg";
 
 export default function Home() {
+  const router = useRouter();
+  const [method, setMethod] = useState("Select Audience Manager on the Ad Manager");
+  const [methodIndex, setMethodIndex] = useState(1);
+
+  const howItWorks = [
+    {
+      title: "Select Audience Manager on the Ad Manager",
+      icon: framedCursor,
+    },
+    {
+      title: "Upload your ad (text, graphics or video)",
+      icon: upload,
+    },
+    {
+      title: "Select ad platform (bulk SMS or Email)",
+      icon: smsIcon,
+    },
+    {
+      title: "Review ad cost and make payment",
+      icon: creditCard,
+    },
+    {
+      title: "Bombs Ads Away.",
+      icon: sendIcon,
+    },
+  ];
+
+  const audience = [
+    {
+      title: "Age",
+      icon: carriage,
+      width: "111px",
+    },
+    {
+      title: "Gender",
+      icon: gender,
+      width: "140px",
+    },
+    {
+      title: "Level",
+      icon: skill,
+      width: "119px",
+    },
+    {
+      title: "Department",
+      icon: department,
+      width: "171px",
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+    <main className="max-w-[1440px] mx-auto bg-[#F8F3F1] overflow-hidden">
+      <section className="flex justify-between items-center p-2 md:p-4 lg:p-8 relative">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={logo}
+          alt="logo"
+          className="w-[25%] md:w-[20%] lg:w-[20%] xl:w-[13%]"
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        <div className="flex items-center gap-2 md:gap-8 text-[#150062]  text-sm md:text-base  lg:text-lg">
+          <Link href="#">About Us</Link>
+          <Link href="#">How it works</Link>
+        </div>
+        <button className="md:px-6 py-2 px-3 text-sm md:text-base  lg:text-lg rounded-lg font-normal text-[#150062] border border-[#150062]">
+          Login
+        </button>
+      </section>
+      <section className="mt-8 md:mt-12 lg:mt-28 relative">
+        <div className="w-[98%] md:w-[90%] lg:w-[85%] xl:w-[65%] mx-auto text-center">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl italic font-[400] text-[#6742F1]">
+            <span className="text-[#141414]">Marketing</span> To the Right
+            Audience Shouldn't be Rocket Science. We Make Sure It Isn't.
+          </h1>
+          <p className="my-2 md:my-4 lg:my-6 xl:my-8 text-sm md:text-base lg:text-lg xl:text-xl w-[90%] mx-auto">
+            Experience effortless delivery of your adverts in any form (Text,
+            Graphics, or Video) to the OAU Campus audience with Konnectify for
+            Business
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+          <button className="text-lg md:text-2xl w-[60%] lg:text-3xl xl:text-4xl bg-[#FFA602] md:w-[35%] lg:w-[40%] xl:w-[340px] 2xl:w-[350px] py-2 md:py-4 xl:py-6 rounded-lg text-[#150062] font-semibold" onClick={() => router.push("/auth/register")} disabled={false}>
+            Get Started
+          </button>
+        </div>
+        <div className="flex items-center justify-between">
+          <Image src={typingPc} alt="logo" className="w-[50%] -mt-[5%]" />
+          <Image
+            src={payment}
+            alt="logo"
+            className="w-[50%] -mt-[25%]"
+          />
+        </div>
+      </section>
+      <section className="pt-8 md:pt-12 lg:pt-28 bg-[#ffffff] flex flex-col lg:flex-row py-16 mx-auto ">
+        <div className="w-full lg:w-[34.2%] flex items-start">
+          <div className="lg:w-[10%] xl:w-[100px] lg:h-[100px] xl:h-[172px] bg-[#D9D9D9]  lg:block mt-10"></div>
+          <Image
+            src={guy}
+            alt="logo"
+            className="w-[90%] lg:[90%] lg:max-w-[393px] mx-auto lg:mx-0 "
+          />
+        </div>
+        <div className="w-[90%] lg:w-[56%] lg:ml-10 mx-auto lg:mx-0 mt-3 lg:mt-0 flex flex-col justify-between">
+          <div>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl italic font-[400]">
+              Your Gateway to Effortless{" "}
+              <span className="text-[#6742F1]">Campus Advertising</span>
+            </h1>
+            <p className="text-sm md:text-base lg:text-lg xl:text-xl leading-[170%] font-normal text-[#303030] mt-6">
+              Our mission is to revolutionize the way businesses connect with
+              students across Nigeria, starting with the vibrant community at
+              OAU.
+              <br />
+              <br />
+              Experience precision with targeted advertising, as Konnectify
+              harnesses the power of data to ensure your ads reach the right
+              eyes through email and SMS marketing.
+              <br />
+              <br />
+              Our platform eliminates the complexities of advertising with
+              effortless campaign creation—whether text, graphics, or
+              video—while offering campus-wide reach and affordability. Elevate
+              your brand without breaking the bank;
+            </p>
+          </div>
+          <div className="mt-6">
+            <button className="bg-[#FFA602] text-[#150062] font-normal text-base md:text-lg lg:text-xl px-8 py-3 md:py-4 rounded-lg " onClick={() => router.push("/auth/register")}>
+              Start Advertising
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="bg-[#ffffff] py-8 md:py-12 lg:py-24 flex flex-col">
+        <h1 className="text-[#000] mx-auto text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+          How it works
+        </h1>
+        <div className="w-[100%] px-[2%] lg:px-[3%] xl:px-[7%] flex flex-col md:flex-row justify-between mt-6 md:mt-8 lg:mt-16">
+          <div className="flex flex-col gap-4 lg:gap-8 md:w-[48%]">
+            {howItWorks.map((item, index) => (
+              <div
+                className={`${
+                  method === item.title &&
+                  "how-it-works-box-active font-semibold"
+                } how-it-works-box flex items-center p-3 lg:p-6 font-[400] text-[#303030] shadow-[0px 17px 145px 0px rgba(0, 0, 0, 0.09)] text-sm md:text-base  lg:text-lg cursor-pointer`}
+                key={index}
+                onClick={() => {
+                  setMethod(item.title);
+                  setMethodIndex(index + 1);
+                }}
+              >
+                <Image src={item.icon} alt="logo" className="" />
+                <h1 className="ml-2">{item.title}</h1>
+              </div>
+            ))}
+          </div>
+          <div className="mt-2 md:mt-0 md:w-[48%]">
+            {methodIndex === 1 && (
+              <Image src={Audience} alt="logo" className="w-full" />
+            )}
+            {methodIndex === 2 && (
+              <Image src={Upload} alt="logo" className="w-full" />
+            )}
+            {methodIndex === 3 && (
+              <Image src={Deliver} alt="logo" className="w-full" />
+            )}
+            {methodIndex === 4 && (
+              <Image src={Pay} alt="logo" className="w-full" />
+            )}
+            {methodIndex === 5 && (
+              <Image src={Blow} alt="logo" className="w-full" />
+            )}
+          </div>
+        </div>
+        <div className="mt-8 md:mt-12 lg:mt-24 w-[90%] xl:w-[70%] mx-auto bg-[#6742F1] flex flex-col items-center justify-center text-center text-2xl md:text-4xl lg:text-5xl text-[#fff] py-3 md:py-6 lg:py-8 rounded-[24px]">
+          <p>Ready to Start Your Ad Campaign?</p>
+          <button className=" text-sm md:text-base lg:text-lg w-[50%] mt-3 md:mt-4 lg:mt-8  bg-[#FFA602] md:w-[35%] xl:w-[270px] py-2 md:py-4 rounded-lg text-[#150062]" onClick={() => router.push("/auth/register")}>
+            Let's GO
+          </button>
+        </div>
+      </section>
+      <footer className="bg-[#F8F3F1] p-8 lg:p-24 grid grid-cols-12">
+        <div className="col-span-12 md:col-span-4 flex flex-col gap-4 text-[#303030] text-sm lg:text-base font-normal  order-3 md:order-1">
+          <Image src={logo} alt="logo" className="" />
+          <div className="mt-2 flex items-start">
+            <span><Image  src={copy} alt="logo" className="" /></span>
+            <span className="ml-1">
+              All Rights Reserved.
+              <br className="hidden md:block" />
+              Copyright 2023{" "}
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+          </div>
+        </div>
+        <div className="col-span-12 md:col-span-4 flex flex-col lg:pl-12  gap-6 order-2 md:order-2 my-6 md:my-0 ">
+          <div className="flex items-center">
+            <span>
+              <Image src={phone} alt="logo" className="" />
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+            <span>
+              234-9079100063
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          </div>
+          <div className="flex items-center">
+            <span>
+              <Image src={mail} alt="logo" className="" />
+            </span>
+            <span>
+              konnectifyafrica@gmail.com
+            </span>
+          </div>
+        </div>
+        <div className="col-span-12 md:col-span-4 flex items-start md:justify-end gap-8 order-1 md:order-3">
+              <Image src={facebook} alt="logo" className="" />
+              <Image src={x} alt="logo" className="" />
+              <Image src={ig} alt="logo" className="" />
+              <Image src={linkedin} alt="logo" className="" />
+        </div>
+      </footer>
     </main>
-  )
+  );
 }
