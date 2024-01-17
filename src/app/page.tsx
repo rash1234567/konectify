@@ -29,6 +29,7 @@ import Pay from "@public/assets/Pay.svg";
 import Blow from "@public/assets/Blow-away.svg";
 import copy from "@public/assets/c.svg";
 
+
 export default function Home() {
   const router = useRouter();
   const [method, setMethod] = useState("Select Audience Manager on the Ad Manager");
@@ -92,7 +93,7 @@ export default function Home() {
           <Link href="#">About Us</Link>
           <Link href="#">How it works</Link>
         </div>
-        <button className="md:px-6 py-2 px-3 text-sm md:text-base  lg:text-lg rounded-lg font-normal text-[#150062] border border-[#150062]">
+        <button className="md:px-6 py-2 px-3 text-sm md:text-base lg:text-lg rounded-lg font-normal text-[#150062] border border-[#150062]" onClick={() => router.push("/login")}>
           Login
         </button>
       </section>
@@ -107,7 +108,7 @@ export default function Home() {
             Graphics, or Video) to the OAU Campus audience with Konnectify for
             Business
           </p>
-          <button className="text-lg md:text-2xl w-[60%] lg:text-3xl xl:text-4xl bg-[#FFA602] md:w-[35%] lg:w-[40%] xl:w-[340px] 2xl:w-[350px] py-2 md:py-4 xl:py-6 rounded-lg text-[#150062] font-semibold" onClick={() => router.push("/auth/register")} disabled={false}>
+          <button className="text-lg md:text-2xl w-[60%] lg:text-3xl xl:text-4xl bg-[#FFA602] md:w-[35%] lg:w-[40%] xl:w-[340px] 2xl:w-[350px] py-2 md:py-4 xl:py-6 rounded-lg text-[#150062] font-semibold" onClick={() => router.push("/register")} disabled={false}>
             Get Started
           </button>
         </div>
@@ -153,7 +154,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-6">
-            <button className="bg-[#FFA602] text-[#150062] font-normal text-base md:text-lg lg:text-xl px-8 py-3 md:py-4 rounded-lg " onClick={() => router.push("/auth/register")}>
+            <button className="bg-[#FFA602] text-[#150062] font-normal text-base md:text-lg lg:text-xl px-8 py-3 md:py-4 rounded-lg " onClick={() => router.push("/register")}>
               Start Advertising
             </button>
           </div>
@@ -202,7 +203,7 @@ export default function Home() {
         </div>
         <div className="mt-8 md:mt-12 lg:mt-24 w-[90%] xl:w-[70%] mx-auto bg-[#6742F1] flex flex-col items-center justify-center text-center text-2xl md:text-4xl lg:text-5xl text-[#fff] py-3 md:py-6 lg:py-8 rounded-[24px]">
           <p>Ready to Start Your Ad Campaign?</p>
-          <button className=" text-sm md:text-base lg:text-lg w-[50%] mt-3 md:mt-4 lg:mt-8  bg-[#FFA602] md:w-[35%] xl:w-[270px] py-2 md:py-4 rounded-lg text-[#150062]" onClick={() => router.push("/auth/register")}>
+          <button className=" text-sm md:text-base lg:text-lg w-[50%] mt-3 md:mt-4 lg:mt-8  bg-[#FFA602] md:w-[35%] xl:w-[270px] py-2 md:py-4 rounded-lg text-[#150062]" onClick={() => router.push("/register")}>
             Let's GO
           </button>
         </div>
